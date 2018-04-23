@@ -10,7 +10,6 @@ import UIKit
 
 class TimerViewController: UIViewController {
     
-    let app = AppDelegate()
     let usrD = UserDefaults.standard
     
     @IBOutlet weak var timerMinute: UILabel!
@@ -22,15 +21,12 @@ class TimerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        usrD.set(false, forKey: "endFlag")
+        NotificationCenter.default.addObserver(self, selector: #selector(TimerViewController.viewWillEnterForeground(_:)), name: .UIApplicationWillEnterForeground, object: nil)
         
-        //timeLabel.text = "00:00:00"
         startTimer()
         
         registerforDeviceLockNotification()
-        CFNotificationCenterRemoveObserver(CFNotificationCenterGetLocalCenter(),
-                                           Unmanaged.passUnretained(self).toOpaque(),
-                                           nil,
-                                           nil)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -103,7 +99,30 @@ class TimerViewController: UIViewController {
         // the "com.apple.springboard.lockcomplete" notification will always come after the "com.apple.springboard.lockstate" notification
         if (lockState == "com.apple.springboard.lockcomplete") {
             print("DEVICE LOCKED")
-            usrD.set(true, forKey: "lockTag")
+            usrD.set(true, forKey: "lockFlag")
+        }
+    }
+    
+    func alertPresent() {
+        let alertController = UIAlertController(title: "test",message: "アラートボタン", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default){ (action: UIAlertAction) in
+            let storyboard: UIStoryboard = self.storyboard!
+            let main = storyboard.instantiateViewController(withIdentifier: "main")
+            self.present(main, animated: true, completion: nil)
+        }
+         
+        alertController.addAction(okAction)
+        present(alertController,animated: true,completion: nil)
+    }
+    
+    @objc func viewWillEnterForeground(_ notification: Notification?) {
+        if (self.isViewLoaded && (self.view.window != nil)) {
+            if usrD.bool(forKey: "endFlag"){
+                print("マダガスカルにきました")
+                alertPresent()
+                usrD.set(false, forKey: "endFlag")
+            }
         }
     }
 }
