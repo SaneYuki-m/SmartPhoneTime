@@ -11,7 +11,9 @@ import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
-
+    
+    let usrD = UserDefaults.standard
+    
     var window: UIWindow?
     var backgroundTaskID : UIBackgroundTaskIdentifier = 0
 
@@ -20,14 +22,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         return true
     }
 
-
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        
+        //backTagをtrue
+        usrD.set(true, forKey: "backTag")
         //　通知設定に必要なクラスをインスタンス化
         let trigger: UNNotificationTrigger
         let content = UNMutableNotificationContent()
@@ -49,6 +51,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
+        if !usrD.bool(forKey: "lockTag") && usrD.bool(forKey: "backTag"){
+            
+        }
+        
+        usrD.set(false, forKey: "lockTag")
+        usrD.set(false, forKey: "backTag")
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
     }
 

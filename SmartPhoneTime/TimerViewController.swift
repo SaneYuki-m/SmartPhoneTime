@@ -10,12 +10,12 @@ import UIKit
 
 class TimerViewController: UIViewController {
     
-
+    let app = AppDelegate()
+    let usrD = UserDefaults.standard
+    
     @IBOutlet weak var timerMinute: UILabel!
     @IBOutlet weak var timerHour: UILabel!
     @IBOutlet weak var timerSecond: UILabel!
-    
-    var lockTag:Bool = false
     
     weak var timer: Timer!
     var startTime = Date()
@@ -101,15 +101,9 @@ class TimerViewController: UIViewController {
     
     private func displayStatusChanged(_ lockState: String) {
         // the "com.apple.springboard.lockcomplete" notification will always come after the "com.apple.springboard.lockstate" notification
-        print("Darwin notification NAME = \(lockState)")
         if (lockState == "com.apple.springboard.lockcomplete") {
             print("DEVICE LOCKED")
-            lockTag = true
-        } else {
-            if lockTag{
-                lockTag = false
-            }
-            print("LOCK STATUS CHANGED")
+            usrD.set(true, forKey: "lockTag")
         }
     }
 }
