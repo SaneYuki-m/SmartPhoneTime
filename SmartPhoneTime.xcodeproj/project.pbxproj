@@ -16,6 +16,14 @@
 		4F88162E208C54C200CDFC92 /* SmartPhoneTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F88162D208C54C200CDFC92 /* SmartPhoneTimeTests.swift */; };
 		4F881639208C54C200CDFC92 /* SmartPhoneTimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F881638208C54C200CDFC92 /* SmartPhoneTimeUITests.swift */; };
 		4F881647208C95D400CDFC92 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F881646208C95D400CDFC92 /* MainViewController.swift */; };
+		4F926CDC2091B73C009B30E3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F926CDB2091B73C009B30E3 /* GoogleService-Info.plist */; };
+		4F926CDD2091B73C009B30E3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F926CDB2091B73C009B30E3 /* GoogleService-Info.plist */; };
+		4F926CDE2091B73C009B30E3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F926CDB2091B73C009B30E3 /* GoogleService-Info.plist */; };
+		4FB6D8C020942D0E00A1D05E /* LineSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FB6D8BF20942D0E00A1D05E /* LineSDK.framework */; };
+		4FB6D8C220942D3300A1D05E /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FB6D8C120942D3300A1D05E /* CoreTelephony.framework */; };
+		4FB6D8C420942D3F00A1D05E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FB6D8C320942D3F00A1D05E /* Security.framework */; };
+		4FB8F656208F589200D58A7A /* TimerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB8F655208F589200D58A7A /* TimerLabel.swift */; };
+		4FB8F65820901D4300D58A7A /* UserResiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB8F65720901D4300D58A7A /* UserResiViewController.swift */; };
 		6DCB07223D274A4AE9F1E783 /* Pods_SmartPhoneTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2D010F30C8A75436F8A02BD /* Pods_SmartPhoneTime.framework */; };
 		F18563D33193624AAE8114AE /* Pods_SmartPhoneTimeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D62A31BC2B843448B57AC4D /* Pods_SmartPhoneTimeUITests.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +64,12 @@
 		4F881638208C54C200CDFC92 /* SmartPhoneTimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartPhoneTimeUITests.swift; sourceTree = "<group>"; };
 		4F88163A208C54C200CDFC92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F881646208C95D400CDFC92 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		4F926CDB2091B73C009B30E3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4FB6D8BF20942D0E00A1D05E /* LineSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LineSDK.framework; path = ../../../Users/saneyuki/Downloads/LineSDK/LineSDK.framework; sourceTree = "<group>"; };
+		4FB6D8C120942D3300A1D05E /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		4FB6D8C320942D3F00A1D05E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		4FB8F655208F589200D58A7A /* TimerLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerLabel.swift; sourceTree = "<group>"; };
+		4FB8F65720901D4300D58A7A /* UserResiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResiViewController.swift; sourceTree = "<group>"; };
 		7AE9E256ED3355CF04B44E9E /* Pods-SmartPhoneTimeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartPhoneTimeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartPhoneTimeUITests/Pods-SmartPhoneTimeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7DBC555CDE14EE97F6420F0D /* Pods-SmartPhoneTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartPhoneTime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartPhoneTime/Pods-SmartPhoneTime.debug.xcconfig"; sourceTree = "<group>"; };
 		A2D010F30C8A75436F8A02BD /* Pods_SmartPhoneTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartPhoneTime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +82,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FB6D8C420942D3F00A1D05E /* Security.framework in Frameworks */,
+				4FB6D8C220942D3300A1D05E /* CoreTelephony.framework in Frameworks */,
+				4FB6D8C020942D0E00A1D05E /* LineSDK.framework in Frameworks */,
 				6DCB07223D274A4AE9F1E783 /* Pods_SmartPhoneTime.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,10 +135,13 @@
 			children = (
 				4F881618208C54B800CDFC92 /* AppDelegate.swift */,
 				4F881646208C95D400CDFC92 /* MainViewController.swift */,
+				4FB8F655208F589200D58A7A /* TimerLabel.swift */,
 				4F88161A208C54B800CDFC92 /* TimerViewController.swift */,
+				4FB8F65720901D4300D58A7A /* UserResiViewController.swift */,
 				4F88161C208C54B800CDFC92 /* Main.storyboard */,
 				4F88161F208C54C100CDFC92 /* Assets.xcassets */,
 				4F881621208C54C100CDFC92 /* LaunchScreen.storyboard */,
+				4F926CDB2091B73C009B30E3 /* GoogleService-Info.plist */,
 				4F881624208C54C100CDFC92 /* Info.plist */,
 			);
 			path = SmartPhoneTime;
@@ -161,6 +181,9 @@
 		8E43737B060B9B536EB7DE99 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4FB6D8C320942D3F00A1D05E /* Security.framework */,
+				4FB6D8C120942D3300A1D05E /* CoreTelephony.framework */,
+				4FB6D8BF20942D0E00A1D05E /* LineSDK.framework */,
 				A2D010F30C8A75436F8A02BD /* Pods_SmartPhoneTime.framework */,
 				22659E3DE3FF2C446E230B3E /* Pods_SmartPhoneTimeTests.framework */,
 				0D62A31BC2B843448B57AC4D /* Pods_SmartPhoneTimeUITests.framework */,
@@ -277,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F881623208C54C100CDFC92 /* LaunchScreen.storyboard in Resources */,
+				4F926CDC2091B73C009B30E3 /* GoogleService-Info.plist in Resources */,
 				4F881620208C54C100CDFC92 /* Assets.xcassets in Resources */,
 				4F88161E208C54B800CDFC92 /* Main.storyboard in Resources */,
 			);
@@ -286,6 +310,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F926CDD2091B73C009B30E3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +318,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F926CDE2091B73C009B30E3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,11 +369,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SmartPhoneTime/Pods-SmartPhoneTime-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,6 +408,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FB8F656208F589200D58A7A /* TimerLabel.swift in Sources */,
+				4FB8F65820901D4300D58A7A /* UserResiViewController.swift in Sources */,
 				4F881647208C95D400CDFC92 /* MainViewController.swift in Sources */,
 				4F88161B208C54B800CDFC92 /* TimerViewController.swift in Sources */,
 				4F881619208C54B800CDFC92 /* AppDelegate.swift in Sources */,
@@ -559,6 +589,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A6T29DKPDJ;
 				INFOPLIST_FILE = SmartPhoneTime/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -578,6 +609,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A6T29DKPDJ;
 				INFOPLIST_FILE = SmartPhoneTime/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

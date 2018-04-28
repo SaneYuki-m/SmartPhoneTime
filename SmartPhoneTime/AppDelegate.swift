@@ -7,60 +7,59 @@
 //
 
 import UIKit
-import UserNotifications
+import Firebase
+import LineSDK
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let usrD = UserDefaults.standard
-    var backTime:Date?
     
     var window: UIWindow?
-    var backgroundTaskID : UIBackgroundTaskIdentifier = 0
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        return LineSDKLogin.sharedInstance().handleOpen(url)
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        FirebaseApp.configure()
+        
+        let dict = ["firstLaunch": true]
+        // デフォルト値登録
+        // ※すでに値が更新されていた場合は、更新後の値のままになる
+        usrD.register(defaults: dict)
+        
+        // "firstLaunch"に紐づく値がtrueなら(=初回起動)、値をfalseに更新して処理を行う
+        if usrD.bool(forKey: "firstLaunch") {
+            let name = "a"
+            let pass = "a"
+            usrD.set(false, forKey: "firstLaunch")
+            usrD.set(0, forKey: "allTime")
+            usrD.set(name, forKey: "name")
+            usrD.set(pass, forKey: "pass")
+            
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            //Storyboardを指定
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            //Viewcontrollerを指定
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "first")
+            //rootViewControllerに入れる
+            self.window?.rootViewController = initialViewController
+            //表示
+            self.window?.makeKeyAndVisible()
+        }
         // Override point for customization after application launch.
         return true
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
         
-        //backTagをtrue
-        usrD.set(true, forKey: "backFlag")
-        
-        backTime = Date()
-        
-        //　通知設定に必要なクラスをインスタンス化
-        let trigger: UNNotificationTrigger
-        let content = UNMutableNotificationContent()
-        
-        // 設定したタイミングを起点として1分後に通知したい場合
-        trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
-        
-        // 通知内容の設定
-        content.title = "あれ？"
-        content.body = "勉強は？"
-        content.sound = UNNotificationSound.default()
-        
-        // 通知スタイルを指定
-        let request = UNNotificationRequest(identifier: "uuid", content: content, trigger: trigger)
-        // 通知をセット
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         
-        if !usrD.bool(forKey: "lockFlag") && usrD.bool(forKey: "backFlag"){
-            let intervalTime = Date().timeIntervalSince(backTime!)
-            if intervalTime >= 20{
-                usrD.set(true, forKey: "endFlag")
-            }
-        }
-        
-        usrD.set(false, forKey: "lockFlag")
-        usrD.set(false, forKey: "backFlag")
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
     }
     func applicationDidBecomeActive(_ application: UIApplication) {
