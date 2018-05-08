@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		232E9D7AED95D22F660CB186 /* Pods_SmartPhoneTimeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22659E3DE3FF2C446E230B3E /* Pods_SmartPhoneTimeTests.framework */; };
+		4F2F5A50209EA94000AE0486 /* GroupMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2F5A4F209EA94000AE0486 /* GroupMemberViewController.swift */; };
+		4F2F5A52209EF33000AE0486 /* GroupApproveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2F5A51209EF32F00AE0486 /* GroupApproveViewController.swift */; };
+		4F502B5520A1738C00083040 /* GroupRankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F502B5420A1738C00083040 /* GroupRankingViewController.swift */; };
 		4F881619208C54B800CDFC92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F881618208C54B800CDFC92 /* AppDelegate.swift */; };
 		4F88161B208C54B800CDFC92 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F88161A208C54B800CDFC92 /* TimerViewController.swift */; };
 		4F88161E208C54B800CDFC92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F88161C208C54B800CDFC92 /* Main.storyboard */; };
@@ -19,6 +22,10 @@
 		4F926CDC2091B73C009B30E3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F926CDB2091B73C009B30E3 /* GoogleService-Info.plist */; };
 		4F926CDD2091B73C009B30E3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F926CDB2091B73C009B30E3 /* GoogleService-Info.plist */; };
 		4F926CDE2091B73C009B30E3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F926CDB2091B73C009B30E3 /* GoogleService-Info.plist */; };
+		4FA96A0820945EDB0003A56F /* GroupResiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA96A0720945EDB0003A56F /* GroupResiViewController.swift */; };
+		4FA96A0A2094618D0003A56F /* GroupSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA96A092094618D0003A56F /* GroupSearchViewController.swift */; };
+		4FA96A0C20947B520003A56F /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA96A0B20947B520003A56F /* SettingViewController.swift */; };
+		4FA96A0E20947BFF0003A56F /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA96A0D20947BFF0003A56F /* GroupViewController.swift */; };
 		4FB6D8C020942D0E00A1D05E /* LineSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FB6D8BF20942D0E00A1D05E /* LineSDK.framework */; };
 		4FB6D8C220942D3300A1D05E /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FB6D8C120942D3300A1D05E /* CoreTelephony.framework */; };
 		4FB6D8C420942D3F00A1D05E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FB6D8C320942D3F00A1D05E /* Security.framework */; };
@@ -50,6 +57,9 @@
 		1A8FDC44160007061F1CB0F1 /* Pods-SmartPhoneTimeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartPhoneTimeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartPhoneTimeTests/Pods-SmartPhoneTimeTests.release.xcconfig"; sourceTree = "<group>"; };
 		22659E3DE3FF2C446E230B3E /* Pods_SmartPhoneTimeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartPhoneTimeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34B29429483C683298BEDC5A /* Pods-SmartPhoneTimeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartPhoneTimeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartPhoneTimeUITests/Pods-SmartPhoneTimeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4F2F5A4F209EA94000AE0486 /* GroupMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMemberViewController.swift; sourceTree = "<group>"; };
+		4F2F5A51209EF32F00AE0486 /* GroupApproveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupApproveViewController.swift; sourceTree = "<group>"; };
+		4F502B5420A1738C00083040 /* GroupRankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupRankingViewController.swift; sourceTree = "<group>"; };
 		4F881615208C54B800CDFC92 /* SmartPhoneTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartPhoneTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F881618208C54B800CDFC92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F88161A208C54B800CDFC92 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +75,10 @@
 		4F88163A208C54C200CDFC92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F881646208C95D400CDFC92 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4F926CDB2091B73C009B30E3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4FA96A0720945EDB0003A56F /* GroupResiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupResiViewController.swift; sourceTree = "<group>"; };
+		4FA96A092094618D0003A56F /* GroupSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSearchViewController.swift; sourceTree = "<group>"; };
+		4FA96A0B20947B520003A56F /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		4FA96A0D20947BFF0003A56F /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		4FB6D8BF20942D0E00A1D05E /* LineSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LineSDK.framework; path = ../../../Users/saneyuki/Downloads/LineSDK/LineSDK.framework; sourceTree = "<group>"; };
 		4FB6D8C120942D3300A1D05E /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		4FB6D8C320942D3F00A1D05E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -134,7 +148,14 @@
 			isa = PBXGroup;
 			children = (
 				4F881618208C54B800CDFC92 /* AppDelegate.swift */,
+				4F2F5A51209EF32F00AE0486 /* GroupApproveViewController.swift */,
+				4FA96A0D20947BFF0003A56F /* GroupViewController.swift */,
+				4F2F5A4F209EA94000AE0486 /* GroupMemberViewController.swift */,
+				4F502B5420A1738C00083040 /* GroupRankingViewController.swift */,
+				4FA96A0720945EDB0003A56F /* GroupResiViewController.swift */,
+				4FA96A092094618D0003A56F /* GroupSearchViewController.swift */,
 				4F881646208C95D400CDFC92 /* MainViewController.swift */,
+				4FA96A0B20947B520003A56F /* SettingViewController.swift */,
 				4FB8F655208F589200D58A7A /* TimerLabel.swift */,
 				4F88161A208C54B800CDFC92 /* TimerViewController.swift */,
 				4FB8F65720901D4300D58A7A /* UserResiViewController.swift */,
@@ -408,10 +429,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F2F5A50209EA94000AE0486 /* GroupMemberViewController.swift in Sources */,
+				4FA96A0E20947BFF0003A56F /* GroupViewController.swift in Sources */,
+				4F502B5520A1738C00083040 /* GroupRankingViewController.swift in Sources */,
 				4FB8F656208F589200D58A7A /* TimerLabel.swift in Sources */,
+				4FA96A0820945EDB0003A56F /* GroupResiViewController.swift in Sources */,
+				4FA96A0A2094618D0003A56F /* GroupSearchViewController.swift in Sources */,
+				4FA96A0C20947B520003A56F /* SettingViewController.swift in Sources */,
 				4FB8F65820901D4300D58A7A /* UserResiViewController.swift in Sources */,
 				4F881647208C95D400CDFC92 /* MainViewController.swift in Sources */,
 				4F88161B208C54B800CDFC92 /* TimerViewController.swift in Sources */,
+				4F2F5A52209EF33000AE0486 /* GroupApproveViewController.swift in Sources */,
 				4F881619208C54B800CDFC92 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

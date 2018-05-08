@@ -87,7 +87,7 @@ class TimerViewController: UIViewController , UNUserNotificationCenterDelegate {
         
         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default){ (action: UIAlertAction) in
             let storyboard: UIStoryboard = self.storyboard!
-            let main = storyboard.instantiateViewController(withIdentifier: "main")
+            let main = storyboard.instantiateViewController(withIdentifier: "tabbar")
             self.present(main, animated: true, completion: nil)
         }
          
@@ -119,7 +119,6 @@ class TimerViewController: UIViewController , UNUserNotificationCenterDelegate {
     
     @objc func viewDidEnterBackground(_ notification: Notification?) {
         if (self.isViewLoaded && (self.view.window != nil)) {
-            
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             //backTagをtrue
                 self.usrD.set(true, forKey: "backFlag")

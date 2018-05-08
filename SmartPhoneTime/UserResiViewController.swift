@@ -4,12 +4,11 @@
 //
 //  Created by 牧野真之 on 2018/04/25.
 //  Copyright © 2018年 Lame. All rights reserved.
-//
 
 import UIKit
 import LineSDK
 
-class UserResiViewController: UIViewController {
+class UserResiViewController: UIViewController, UITextFieldDelegate {
 
     let usrD = UserDefaults.standard
     @IBOutlet weak var nameText: UITextField!
@@ -18,8 +17,13 @@ class UserResiViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         LineSDKLogin.sharedInstance().delegate = self
+        nameText.delegate = self
+        nameText.returnKeyType = .done
+        passwordText.delegate = self
+        passwordText.returnKeyType = .done
         // Do any additional setup after loading the view.
     }
+    
     @IBAction func didTapLogin(_ sender: UIButton) {
         LineSDKLogin.sharedInstance().start()
     }
@@ -36,7 +40,13 @@ class UserResiViewController: UIViewController {
         let main = storyboard.instantiateViewController(withIdentifier: "main")
         self.present(main, animated: true, completion: nil)
     }
-
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // キーボードを隠す
+        textField.resignFirstResponder()
+        return true
+    }
+    
     /*
     // MARK: - Navigation
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -45,7 +55,9 @@ class UserResiViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
 }
+
 extension UserResiViewController: LineSDKLoginDelegate {
     
     func didLogin(_ login: LineSDKLogin,
@@ -65,17 +77,22 @@ extension UserResiViewController: LineSDKLoginDelegate {
         
         // 表示名
         if let displayName = profile?.displayName {
-            print("displayName : \(displayName)")
+            usrD.set(displayName, forKey:"name")
         }
         
         // ユーザID
         if let userID = profile?.userID {
-            print("userID : \(userID)")
+            usrD.set(userID, forKey:"uid")
         }
         
         // プロフィール写真のURL
         if let pictureURL = profile?.pictureURL {
-            print("profile Picture URL : \(pictureURL)")
+            usrD.set(pictureURL, forKey:"pictureURL")
+            
         }
+        
+        let storyboard: UIStoryboard = self.storyboard!
+        let main = storyboard.instantiateViewController(withIdentifier: "tabbar")
+        self.present(main, animated: true, completion: nil)
     }
 }

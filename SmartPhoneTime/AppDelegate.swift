@@ -13,8 +13,8 @@ import LineSDK
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
+    var uid:String = UUID().uuidString
     let usrD = UserDefaults.standard
-    
     var window: UIWindow?
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {

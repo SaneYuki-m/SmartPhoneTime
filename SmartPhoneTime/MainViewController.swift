@@ -14,18 +14,13 @@ class MainViewController: UIViewController , UNUserNotificationCenterDelegate{
 
     @IBOutlet weak var startButton: UIButton!
     let usrD = UserDefaults.standard
-    let app:AppDelegate =
-        (UIApplication.shared.delegate as! AppDelegate)
+    let app:AppDelegate = (UIApplication.shared.delegate as! AppDelegate)
 
     var alltime = ""
-    var uid:String = UUID().uuidString
     
     @IBOutlet weak var timerHour: UILabel!
     @IBOutlet weak var timerMinute: UILabel!
     @IBOutlet weak var timerSecond: UILabel!
-    
-    @IBOutlet weak var makeButton: UIButton!
-    @IBOutlet weak var searchButton: UIButton!
     
     var ref: DatabaseReference!
     
@@ -33,18 +28,23 @@ class MainViewController: UIViewController , UNUserNotificationCenterDelegate{
         super.viewDidLoad()
         
         if(usrD.string(forKey: "uid") != nil){
-            uid = usrD.string(forKey: "uid")!
+            app.uid = usrD.string(forKey: "uid")!
         }else{
-            usrD.set(uid, forKey: "uid")
+            usrD.set(app.uid, forKey: "uid")
         }
         
         ref = Database.database().reference()
         
+        if usrD.object(forKey: "group") == nil {
+            usrD.set(["no group"], forKey: "group")
+        }
+        
         let post:Dictionary<String, Any>? = ["name": usrD.string(forKey: "name")!,
                                             "pass": usrD.string(forKey: "pass")!,
-                                            "time": usrD.integer(forKey: "allTime")]
+                                            "time": usrD.integer(forKey: "allTime"),
+                                            "group": usrD.object(forKey: "group") as! [String]]
         
-        let postRef = ref.child("rooms").child(uid)
+        let postRef = ref.child("users").child(app.uid)
         postRef.setValue(post)
         
         timerHour.text = "00"
@@ -76,6 +76,18 @@ class MainViewController: UIViewController , UNUserNotificationCenterDelegate{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func makeGroup(_ sender: UIButton) {
+        let storyboard: UIStoryboard = self.storyboard!
+        let group = storyboard.instantiateViewController(withIdentifier: "group")
+        self.present(group, animated: true, completion: nil)
+    }
+    
+    @IBAction func searchGroup(_ sender: UIButton) {
+        let storyboard: UIStoryboard = self.storyboard!
+        let groupsearch = storyboard.instantiateViewController(withIdentifier: "groupsearch")
+        self.present(groupsearch, animated: true, completion: nil)
     }
     
     func notification(){
