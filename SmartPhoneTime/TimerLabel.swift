@@ -11,7 +11,7 @@ import UIKit
 class TimerLabel: UILabel {
 
     override func awakeFromNib() {
-        self.textColor = UIColor.red
+        
     }
 
 }
