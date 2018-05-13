@@ -11,7 +11,8 @@ import UIKit
 class SettingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableview: UITableView!
-    var groupMember:[String] = ["LINE連携","オプション",""]
+    var groupMember:[String] = ["LINE連携","オプション","公式情報"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,7 +26,6 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("fincount")
         return groupMember.count
     }
     
@@ -36,7 +36,6 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.textLabel!.text = groupMember[indexPath.row]
         return cell
     }
-    
 
     /*
     // MARK: - Navigation
