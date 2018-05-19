@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import Firebase
 
 class GroupApproveViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
     let usrD = UserDefaults.standard
+    var ref: DatabaseReference!
     var preGroupMember: [String] = [""]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = Database.database().reference()
         preGroupMember = usrD.object(forKey: "passPre") as! [String]
         // Do any additional setup after loading the view.
     }
@@ -32,6 +37,17 @@ class GroupApproveViewController: UIViewController, UITableViewDelegate, UITable
         // セルに表示する値を設定する
         cell.textLabel!.text = preGroupMember[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func approveAlert(){
+        
     }
 
     /*

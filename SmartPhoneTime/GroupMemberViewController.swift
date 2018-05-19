@@ -29,6 +29,7 @@ class GroupMemberViewController: UIViewController , UITableViewDelegate, UITable
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     @IBAction func approveButton(_ sender: UIButton) {
         if usrD.bool(forKey:"niltag"){
             let alertController = UIAlertController(title: "test",message: "アラートボタン", preferredStyle: UIAlertControllerStyle.alert)

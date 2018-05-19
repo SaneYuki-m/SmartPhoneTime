@@ -11,7 +11,8 @@ import UIKit
 class SettingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableview: UITableView!
-    var groupMember:[String] = ["LINE連携","オプション","公式情報"]
+    var groupMember:[String] = ["プロフィール","LINE連携","オプション","公式情報"]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

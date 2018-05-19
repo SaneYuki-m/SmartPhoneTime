@@ -47,7 +47,8 @@ class GroupResiViewController: UIViewController, UITextFieldDelegate {
                 let postRef = ref.child("groups").child(groupText.text!).child("members").child(app.uid)
                 let postRef1 = ref.child("groups").child(groupText.text!).child("password")
                 let postRef2 = ref.child("groups").child(groupText.text!).child("leader")
-            
+                
+                
                 let post1:Dictionary<String, Any>? = ["password": passText.text!]
                 postRef1.setValue(post1)
                 let post:Dictionary<String, Any>? = ["name": usrD.string(forKey: "name")!,
